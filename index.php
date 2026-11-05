@@ -13,7 +13,7 @@ $notice = get_flash();
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CampusConnect | Student Events</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
@@ -63,5 +63,5 @@ $notice = get_flash();
   </section>
 </main>
 <footer><span>© <?= date('Y') ?> CampusConnect</span><span>Built for campus communities</span></footer>
-<script src="assets/app.js"></script>
+<script src="app.js"></script>
 </body></html>
