@@ -39,7 +39,7 @@ if ($selected) {
 }
 $notice = get_flash();
 ?>
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin dashboard | CampusConnect</title><link rel="stylesheet" href="assets/style.css"></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin dashboard | CampusConnect</title><link rel="stylesheet" href="style.css"></head>
 <body><header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">C</span> CampusConnect</a><nav><a href="index.php">View site</a><a href="logout.php">Log out</a></nav></header>
 <main class="dashboard">
 <div class="dashboard-heading"><div><p class="eyebrow">CONTROL CENTRE</p><h1>Admin dashboard</h1><p class="muted">Welcome, <?= e($_SESSION['admin_name'] ?? 'Admin') ?>.</p></div><a class="button button-primary" href="#create-event">+ Create event</a></div>
@@ -54,4 +54,4 @@ $notice = get_flash();
 </div>
 <?php if ($selected): ?><section class="panel attendee-panel"><div class="section-heading"><h2>Attendee list</h2><span class="muted"><?= count($attendees) ?> registered</span></div>
 <?php if (!$attendees): ?><p class="muted">No registrations for this event yet.</p><?php else: ?><div class="table-wrap"><table><thead><tr><th>Name</th><th>Student ID</th><th>Email</th><th>Registered</th><th>Attendance</th><th>Action</th></tr></thead><tbody><?php foreach ($attendees as $person): ?><tr><td><?= e($person['full_name']) ?></td><td><?= e($person['student_id']) ?></td><td><?= e($person['email']) ?></td><td><?= e(date('d M Y', strtotime($person['created_at']))) ?></td><td><span class="status <?= $person['checked_in'] ? 'checked' : 'pending' ?>"><?= $person['checked_in'] ? 'Checked in' : 'Not checked in' ?></span></td><td><form method="post"><input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><input type="hidden" name="action" value="toggle_checkin"><input type="hidden" name="registration_id" value="<?= (int)$person['id'] ?>"><input type="hidden" name="selected_event" value="<?= (int)$selected ?>"><button class="small-button"><?= $person['checked_in'] ? 'Undo' : 'Check in' ?></button></form></td></tr><?php endforeach; ?></tbody></table></div><?php endif; ?></section><?php endif; ?>
-</main><script src="assets/app.js"></script></body></html>
+</main><script src="app.js"></script></body></html>
