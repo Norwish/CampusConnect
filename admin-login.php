@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $error = 'Incorrect username or password.';
 }
 ?>
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin login | CampusConnect</title><link rel="stylesheet" href="assets/style.css"></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin login | CampusConnect</title><link rel="stylesheet" href="style.css"></head>
 <body><header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">C</span> CampusConnect</a><nav><a href="index.php">Public site</a></nav></header>
 <main class="form-page"><div class="form-card narrow"><p class="eyebrow">EVENT MANAGEMENT</p><h1>Administrator login</h1><?php if ($error): ?><div class="alert error"><?= e($error) ?></div><?php endif; ?>
 <form method="post" class="stack-form"><input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><label>Username<input name="username" required autocomplete="username"></label><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="button button-primary">Sign in</button></form></div></main></body></html>
