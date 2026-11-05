@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $notice = get_flash();
 ?>
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Register | CampusConnect</title><link rel="stylesheet" href="assets/style.css"></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Register | CampusConnect</title><link rel="stylesheet" href="style.css"></head>
 <body><header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">C</span> CampusConnect</a><nav><a href="index.php">All events</a></nav></header>
 <main class="form-page"><a class="back-link" href="index.php">← Back to events</a>
 <div class="form-card"><p class="eyebrow">SAVE YOUR SPOT</p><h1>Event registration</h1><div class="selected-event"><strong><?= e($event['title']) ?></strong><span><?= e(date('D, d M Y', strtotime($event['event_date']))) ?> · <?= e(date('g:i A', strtotime($event['event_time']))) ?> · <?= e($event['venue']) ?></span></div>
@@ -56,4 +56,4 @@ $notice = get_flash();
 <label>Student ID / Matric number<input name="student_id" required maxlength="60" value="<?= e($_POST['student_id'] ?? '') ?>" placeholder="e.g. CSC/2025/001"></label>
 <label>Phone number <span class="muted">(optional)</span><input name="phone" maxlength="30" value="<?= e($_POST['phone'] ?? '') ?>" placeholder="+234..."></label>
 <button class="button button-primary" type="submit">Confirm registration</button>
-</form></div></main><script src="assets/app.js"></script></body></html>
+</form></div></main><script src="app.js"></script></body></html>
